@@ -20,7 +20,6 @@ def add_new_rating(existing_dictionary, key = None):
     """
     if key:
         print(f'Please assign a rating for {key}!')
-        #existing_dictionary[key] = existing_dictionary.get(key, 0) + rating
         res_name = key
     else: 
         print('Please assign a rating for your restaurant!')
@@ -47,7 +46,6 @@ def convert_file_to_dictionary(textfile, existing_dictionary):
     
     
 def get_random_key(existing_dictionary):
-    # random.choice()
     random_key = random.choice(list(existing_dictionary.keys()))
     return random_key
 
@@ -64,10 +62,8 @@ def choose_a_restaurant(existing_dictionary):
             add_new_rating(existing_dictionary, res_name)
 
     return existing_dictionary
-        
-    
 
-if __name__ == "__main__":
+def main():
     restaurant_dict = {}
     restaurant_dict = convert_file_to_dictionary("scores.txt", restaurant_dict)
     while True:
@@ -89,5 +85,21 @@ if __name__ == "__main__":
         elif user_prompt == 'e':
             restaurant_dict = choose_a_restaurant(restaurant_dict)
         else: 
-            print("Please enter a valid choice (a)-(c)")
+            print("Please enter a valid choice (a)-(e)")
     prints_ordered_dictionary(restaurant_dict)
+
+def display_currdir():
+    """ display list of text files in current directory
+    """
+def file_to_upload():
+    """ lets user choose file to upload, uploads file
+    """
+
+if __name__ == "__main__":
+    """
+    Modify your script so that it displays a list of text files in 
+    current directory and allows the users to upload other files. 
+    Now we can keep the ratings for different types of restaurants. 
+    Allow the user to leave one list and open another.
+    """
+    
